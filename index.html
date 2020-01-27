@@ -359,22 +359,22 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the HUB API! You can use our API to access Kittn API endpoints, which can get information on various tables in our database.</p>
+<p>Welcome to the HUB API! You can use our API to access HUB API endpoints, which can get information on various tables in our database.</p>
 
 <p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'access_token'</span><span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code>acess_token</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>HUB expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code>Authorization: access_token</code></p>
 
@@ -393,7 +393,7 @@ You must replace <code>access_token</code> with your personal API key.
 <p>This endpoint retrieves all user roles.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://hub.com/api/me/roles</code></p>
-<h1 id='users'>Users</h1><h2 id='get-all-users'>Get All Users</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/users"</span>
+<h1 id='users'>Users</h1><h2 id='get-all-users'>Get All Users</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/users"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -428,12 +428,12 @@ You must replace <code>access_token</code> with your personal API key.
 </span></code></pre>
 <p>This endpoint retrieves all users.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://example.com/api/users</code></p>
+<p><code>GET http://hub.com/api/users</code></p>
 
 <aside class="success">
 Remember — a happy user is an authenticated user!
 </aside>
-<h2 id='get-a-specific-user'>Get a Specific User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/users/2"</span>
+<h2 id='get-a-specific-user'>Get a Specific User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/users/2"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -454,7 +454,7 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET http://example.com/users/&lt;ID&gt;</code></p>
+<p><code>GET http://hub.com/users/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -467,7 +467,7 @@ Remember — a happy user is an authenticated user!
 <td>The ID of the user to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-user'>Delete a Specific User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/users/2"</span>
+<h2 id='delete-a-specific-user'>Delete a Specific User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/users/2"</span>
   -X DELETE
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
@@ -481,7 +481,7 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint deletes a specific user.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE http://example.com/users/&lt;ID&gt;</code></p>
+<p><code>DELETE http://hub.com/users/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -494,7 +494,7 @@ Remember — a happy user is an authenticated user!
 <td>The ID of the user to delete</td>
 </tr>
 </tbody></table>
-<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get All Projects</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects"</span>
+<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get All Projects</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/projects"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -541,8 +541,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all projects.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET http://example.com/api/projects</code></p>
-<h2 id='create-new-project'>Create new project</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/"</span>
+<p><code>GET http://hub.com/api/projects</code></p>
+<h2 id='create-new-project'>Create new project</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/projects/"</span>
   -X POST
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
@@ -570,7 +570,7 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint create new project.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST http://example.com/api/projects</code></p>
+<p><code>POST http://hub.com/api/projects</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -647,7 +647,7 @@ Remember — a happy user is an authenticated user!
 <td>The <code>mpt_at</code> of the project`</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-project'>Get a Specific project</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/2"</span>
+<h2 id='get-a-specific-project'>Get a Specific project</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/projects/2"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -674,7 +674,7 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves a specific project.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET http://example.com/projects/&lt;ID&gt;</code></p>
+<p><code>GET http://hub.com/projects/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -687,7 +687,7 @@ Remember — a happy user is an authenticated user!
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-project'>Delete a Specific project</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/2"</span>
+<h2 id='delete-a-specific-project'>Delete a Specific project</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/projects/2"</span>
   -X DELETE
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
@@ -701,7 +701,7 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint deletes a specific project.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
-<p><code>DELETE http://example.com/projects/&lt;ID&gt;</code></p>
+<p><code>DELETE http://hub.com/projects/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -714,7 +714,7 @@ Remember — a happy user is an authenticated user!
 <td>The ID of the project to delete</td>
 </tr>
 </tbody></table>
-<h2 id='open-gate-request'>Open gate request</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/gate-requests/{project_id}"</span>
+<h2 id='open-gate-request'>Open gate request</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/projects/gate-requests/{project_id}"</span>
   -X POST
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
@@ -728,8 +728,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint open gate request for a specific project.</p>
 <h3 id='http-request-10'>HTTP Request</h3>
-<p><code>DELETE http://example.com/api/projects/gate-requests/&lt;ID&gt;</code></p>
-<h2 id='close-gate-request'>Close gate request</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/gate-requests/close/{gate_request_id}"</span>
+<p><code>DELETE http://hub.com/api/projects/gate-requests/&lt;ID&gt;</code></p>
+<h2 id='close-gate-request'>Close gate request</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/projects/gate-requests/close/{gate_request_id}"</span>
   -X POST
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
@@ -743,7 +743,7 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint open gate request for a specific project.</p>
 <h3 id='http-request-11'>HTTP Request</h3>
-<p><code>DELETE http://example.com/api/projects/gate-requests/close/&lt;ID&gt;</code></p>
+<p><code>DELETE http://hub.com/api/projects/gate-requests/close/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -756,7 +756,7 @@ Remember — a happy user is an authenticated user!
 <td>The <code>status</code> for gate request to be closed</td>
 </tr>
 </tbody></table>
-<h2 id='request-access'>Request access</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/request-access/{project_id}"</span>
+<h2 id='request-access'>Request access</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/projects/request-access/{project_id}"</span>
   -X GET
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
@@ -770,8 +770,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint request access to a specific projet</p>
 <h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET http://example.com/api/projects/request-access/&lt;ID&gt;</code></p>
-<h1 id='categories'>Categories</h1><h2 id='get-all-categories'>Get All Categories</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/categories"</span>
+<p><code>GET http://hub.com/api/projects/request-access/&lt;ID&gt;</code></p>
+<h1 id='categories'>Categories</h1><h2 id='get-all-categories'>Get All Categories</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/categories"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -813,8 +813,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all categories.</p>
 <h3 id='http-request-13'>HTTP Request</h3>
-<p><code>GET http://example.com/api/categories</code></p>
-<h1 id='portfolios'>Portfolios</h1><h2 id='get-all-portfolios'>Get All Portfolios</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/portfolios"</span>
+<p><code>GET http://hub.com/api/categories</code></p>
+<h1 id='portfolios'>Portfolios</h1><h2 id='get-all-portfolios'>Get All Portfolios</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/portfolios"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -828,8 +828,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all portfolios.</p>
 <h3 id='http-request-14'>HTTP Request</h3>
-<p><code>GET http://example.com/api/portfolios</code></p>
-<h1 id='teams'>Teams</h1><h2 id='get-all-teams'>Get All Teams</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/teams"</span>
+<p><code>GET http://hub.com/api/portfolios</code></p>
+<h1 id='teams'>Teams</h1><h2 id='get-all-teams'>Get All Teams</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/teams"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -843,8 +843,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all teams.</p>
 <h3 id='http-request-15'>HTTP Request</h3>
-<p><code>GET http://example.com/api/teams</code></p>
-<h1 id='suppliers'>Suppliers</h1><h2 id='get-all-suppliers'>Get All Suppliers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/suppliers"</span>
+<p><code>GET http://hub.com/api/teams</code></p>
+<h1 id='suppliers'>Suppliers</h1><h2 id='get-all-suppliers'>Get All Suppliers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/suppliers"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -858,8 +858,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all suppliers.</p>
 <h3 id='http-request-16'>HTTP Request</h3>
-<p><code>GET http://example.com/api/suppliers</code></p>
-<h1 id='requests'>Requests</h1><h2 id='get-all-requests'>Get All Requests</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/requests"</span>
+<p><code>GET http://hub.com/api/suppliers</code></p>
+<h1 id='requests'>Requests</h1><h2 id='get-all-requests'>Get All Requests</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/requests"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -873,8 +873,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all requests.</p>
 <h3 id='http-request-17'>HTTP Request</h3>
-<p><code>GET http://example.com/api/requests</code></p>
-<h1 id='notifications'>Notifications</h1><h2 id='get-all-notifications'>Get All Notifications</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/notifications"</span>
+<p><code>GET http://hub.com/api/requests</code></p>
+<h1 id='notifications'>Notifications</h1><h2 id='get-all-notifications'>Get All Notifications</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/notifications"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -888,8 +888,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all notifications.</p>
 <h3 id='http-request-18'>HTTP Request</h3>
-<p><code>GET http://example.com/api/notifications</code></p>
-<h1 id='releases'>Releases</h1><h2 id='get-all-releases'>Get All Releases</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/releases"</span>
+<p><code>GET http://hub.com/api/notifications</code></p>
+<h1 id='releases'>Releases</h1><h2 id='get-all-releases'>Get All Releases</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/releases"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -903,8 +903,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all releases.</p>
 <h3 id='http-request-19'>HTTP Request</h3>
-<p><code>GET http://example.com/api/releases</code></p>
-<h1 id='gates'>Gates</h1><h2 id='get-all-gates'>Get All Gates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/gates"</span>
+<p><code>GET http://hub.com/api/releases</code></p>
+<h1 id='gates'>Gates</h1><h2 id='get-all-gates'>Get All Gates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/gates"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -918,8 +918,8 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all gates.</p>
 <h3 id='http-request-20'>HTTP Request</h3>
-<p><code>GET http://example.com/api/gates</code></p>
-<h1 id='governances'>Governances</h1><h2 id='get-all-governances'>Get All Governances</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/governance"</span>
+<p><code>GET http://hub.com/api/gates</code></p>
+<h1 id='governances'>Governances</h1><h2 id='get-all-governances'>Get All Governances</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://hub.com/api/governance"</span>
   -H <span class="s2">"Authorization: access_token"</span>
 </code></pre>
 <blockquote>
@@ -933,7 +933,7 @@ Remember — a happy user is an authenticated user!
 </span></code></pre>
 <p>This endpoint retrieves all governance.</p>
 <h3 id='http-request-21'>HTTP Request</h3>
-<p><code>GET http://example.com/api/governance</code></p>
+<p><code>GET http://hub.com/api/governance</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The HUB API uses the following error codes:</p>
 
@@ -953,15 +953,15 @@ Remember — a happy user is an authenticated user!
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The project requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified project could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a project with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
@@ -969,7 +969,7 @@ Remember — a happy user is an authenticated user!
 </tr>
 <tr>
 <td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>Gone -- The project requested has been removed from our servers.</td>
 </tr>
 <tr>
 <td>418</td>
@@ -977,7 +977,7 @@ Remember — a happy user is an authenticated user!
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too many projects! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
