@@ -270,6 +270,81 @@
                   <li>
                     <a href="#close-gate-request" class="toc-h2 toc-link" data-title="Close gate request">Close gate request</a>
                   </li>
+                  <li>
+                    <a href="#request-access" class="toc-h2 toc-link" data-title="Request access">Request access</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#categories" class="toc-h1 toc-link" data-title="Categories">Categories</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-categories" class="toc-h2 toc-link" data-title="Get All Categories">Get All Categories</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#portfolios" class="toc-h1 toc-link" data-title="Portfolios">Portfolios</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-portfolios" class="toc-h2 toc-link" data-title="Get All Portfolios">Get All Portfolios</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#teams" class="toc-h1 toc-link" data-title="Teams">Teams</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-teams" class="toc-h2 toc-link" data-title="Get All Teams">Get All Teams</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#suppliers" class="toc-h1 toc-link" data-title="Suppliers">Suppliers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-suppliers" class="toc-h2 toc-link" data-title="Get All Suppliers">Get All Suppliers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#requests" class="toc-h1 toc-link" data-title="Requests">Requests</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-requests" class="toc-h2 toc-link" data-title="Get All Requests">Get All Requests</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#notifications" class="toc-h1 toc-link" data-title="Notifications">Notifications</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-notifications" class="toc-h2 toc-link" data-title="Get All Notifications">Get All Notifications</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#releases" class="toc-h1 toc-link" data-title="Releases">Releases</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-releases" class="toc-h2 toc-link" data-title="Get All Releases">Get All Releases</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#gates" class="toc-h1 toc-link" data-title="Gates">Gates</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-gates" class="toc-h2 toc-link" data-title="Get All Gates">Get All Gates</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#governances" class="toc-h1 toc-link" data-title="Governances">Governances</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-governances" class="toc-h2 toc-link" data-title="Get All Governances">Get All Governances</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -643,7 +718,227 @@ Remember — a happy user is an authenticated user!
 <td>The ID of the project to delete</td>
 </tr>
 </tbody></table>
-<h2 id='open-gate-request'>Open gate request</h2><h2 id='close-gate-request'>Close gate request</h2><h1 id='errors'>Errors</h1>
+<h2 id='open-gate-request'>Open gate request</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/gate-requests/{project_id}"</span>
+  -X POST
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint open gate request for a specific project.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>DELETE http://example.com/api/projects/gate-requests/&lt;ID&gt;</code></p>
+<h2 id='close-gate-request'>Close gate request</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/gate-requests/close/{gate_request_id}"</span>
+  -X POST
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint open gate request for a specific project.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>DELETE http://example.com/api/projects/gate-requests/close/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>The <code>status</code> for gate request to be closed</td>
+</tr>
+</tbody></table>
+<h2 id='request-access'>Request access</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/projects/request-access/{project_id}"</span>
+  -X GET
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint request access to a specific projet</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET http://example.com/api/projects/request-access/&lt;ID&gt;</code></p>
+<h1 id='categories'>Categories</h1><h2 id='get-all-categories'>Get All Categories</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/categories"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Initiative Type"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initiative_type"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CTR"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ctr"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Drop"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project-drop"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Team"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-team"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Program"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"program"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service Request"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service-request"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all categories.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET http://example.com/api/categories</code></p>
+<h1 id='portfolios'>Portfolios</h1><h2 id='get-all-portfolios'>Get All Portfolios</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/portfolios"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all portfolios.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET http://example.com/api/portfolios</code></p>
+<h1 id='teams'>Teams</h1><h2 id='get-all-teams'>Get All Teams</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/teams"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all teams.</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET http://example.com/api/teams</code></p>
+<h1 id='suppliers'>Suppliers</h1><h2 id='get-all-suppliers'>Get All Suppliers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/suppliers"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all suppliers.</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>GET http://example.com/api/suppliers</code></p>
+<h1 id='requests'>Requests</h1><h2 id='get-all-requests'>Get All Requests</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/requests"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all requests.</p>
+<h3 id='http-request-17'>HTTP Request</h3>
+<p><code>GET http://example.com/api/requests</code></p>
+<h1 id='notifications'>Notifications</h1><h2 id='get-all-notifications'>Get All Notifications</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/notifications"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all notifications.</p>
+<h3 id='http-request-18'>HTTP Request</h3>
+<p><code>GET http://example.com/api/notifications</code></p>
+<h1 id='releases'>Releases</h1><h2 id='get-all-releases'>Get All Releases</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/releases"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all releases.</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>GET http://example.com/api/releases</code></p>
+<h1 id='gates'>Gates</h1><h2 id='get-all-gates'>Get All Gates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/gates"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all gates.</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>GET http://example.com/api/gates</code></p>
+<h1 id='governances'>Governances</h1><h2 id='get-all-governances'>Get All Governances</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/governance"</span>
+  -H <span class="s2">"Authorization: access_token"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all governance.</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>GET http://example.com/api/governance</code></p>
+<h1 id='errors'>Errors</h1>
 <p>The HUB API uses the following error codes:</p>
 
 <table><thead>
